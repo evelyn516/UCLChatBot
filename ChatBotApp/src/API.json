@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "content": "A tale of wealth, privilege, and the American Dream set in the Roaring Twenties. Follow Jay Gatsby's pursuit of love and success in the face of societal expectations and moral decay."
+    },
+    {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "content": "Harper Lee's classic novel explores racial injustice and moral growth in the American South. Through the eyes of Scout Finch, witness the impact of the trial of Tom Robinson on her father, Atticus Finch."
+    },
+    {
+        "id": 3,
+        "title": "1984",
+        "content": "George Orwell's dystopian masterpiece depicts a totalitarian society under the watchful eye of Big Brother. Join Winston Smith as he rebels against the oppressive regime, questioning reality and truth."
+    },
+    {
+        "id": 4,
+        "title": "The Catcher in the Rye",
+        "content": "J.D. Salinger's coming-of-age novel follows Holden Caulfield's journey through New York City, grappling with teenage angst, identity, and the loss of innocence."
+    },
+    {
+        "id": 5,
+        "title": "Lord of the Flies",
+        "content": "William Golding's allegorical tale explores the dark aspects of human nature as a group of boys stranded on an uninhabited island descends into chaos and violence."
+    },
+    {
+        "id": 6,
+        "title": "Brave New World",
+        "content": "Aldous Huxley's vision of a dystopian future presents a society controlled by technology, genetic engineering, and mind-altering substances. Follow the protagonist, Bernard Marx, as he questions societal norms."
+    },
+    {
+        "id": 7,
+        "title": "The Hobbit",
+        "content": "J.R.R. Tolkien's fantasy adventure introduces Bilbo Baggins, a hobbit who embarks on a quest to reclaim treasure guarded by the dragon Smaug. Join Bilbo on an epic journey through Middle-earth."
+    },
+    {
+        "id": 8,
+        "title": "Pride and Prejudice",
+        "content": "Jane Austen's classic romance follows Elizabeth Bennet as she navigates love, class, and societal expectations. Witness the evolving relationship between Elizabeth and the enigmatic Mr. Darcy."
+    },
+    {
+        "id": 9,
+        "title": "The Odyssey",
+        "content": "Homer's epic poem tells the adventures of Odysseus as he tries to return home after the Trojan War. Encounter mythical creatures, gods, and challenges in this timeless tale of perseverance."
+    }
+]
