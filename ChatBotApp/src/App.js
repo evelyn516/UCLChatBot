@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/searchbar';
 import Button from "./components/SvgButton" ;
@@ -7,7 +6,7 @@ import { useState } from 'react';
 function App() {
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   const handleClick = () => {
-    setIsChatBotOpen(true)
+    setIsChatBotOpen(!isChatBotOpen)
   };
 
 
@@ -15,7 +14,12 @@ function App() {
     <div className="App">
         {
           isChatBotOpen ? (
+            <>
+            
             <SearchBar />
+            <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
+            </>
+
           ) : (
             <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
           )
