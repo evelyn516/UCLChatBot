@@ -1,0 +1,38 @@
+.search_container {
+    position: absolute;
+    right: 0;
+    bottom: 120px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+  .search_input {
+    width: 350px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search_results {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .search_result {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .search_result:last-child {
+    border-bottom: none;
+  }
+  
+  .no_results {
+    margin-top: 10px;
+    color: #777;
+  }

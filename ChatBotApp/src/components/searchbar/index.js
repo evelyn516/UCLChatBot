@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -14,7 +13,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+    <div className='search_container'>
       <input
         type="text"
         placeholder="Enter your search term"

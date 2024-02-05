@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import "./index.css"
 const SearchAll = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -33,27 +33,27 @@ const SearchAll = () => {
   };
 
   return (
-    <div>
+    <div className='search_container'>
       <input
+        className='search_input'
         type="text"
         placeholder="SEARCH ME"
         value={searchTerm}
         onChange={handleInputChange}
       />
-
+    
       {loading && <p>Loading...</p>}
-
+    
       {searchResults.length > 0 && (
-        <ul>
+        <ul className='search_results'>
           {searchResults.map((result) => (
-            <li key={result.id}>{result.name}</li>
-            // Adjust 'id' and 'name' based on your API response structure
+            <li className='search_result' key={result.id}>{result.name}</li>
           ))}
         </ul>
       )}
-
+    
       {searchResults.length === 0 && !loading && (
-        <p>No results found. Try a reducing to a few key words.</p>
+        <p className='no_results'>No results found. Try reducing to a few key words.</p>
       )}
     </div>
   );

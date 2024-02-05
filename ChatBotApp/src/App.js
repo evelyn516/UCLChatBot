@@ -1,11 +1,15 @@
 import './App.css';
 import SearchAll from './components/handleInput';
 import Button from "./components/SvgButton" ;
-import { ReactComponent as RobotSVG } from './geekbot-svgrepo-com.svg';
 import { useState } from 'react';
+import { ReactComponent as RobotSVG } from './assests/chatbot_icon.svg';
+import { ReactComponent as CrossIcon } from './assests/cross.svg';
 function App() {
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   const handleClick = () => {
+    setIsChatBotOpen(!isChatBotOpen)
+  };
+  const handleChatBoxToggle = () => {
     setIsChatBotOpen(!isChatBotOpen)
   };
 
@@ -17,11 +21,11 @@ function App() {
             <>
             
               <SearchAll />
-              <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
+              <Button onClick={handleClick} icon={RobotSVG} sub_icon={CrossIcon} isChatBotOpen={handleChatBoxToggle}/>
             </>
 
           ) : (
-            <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
+            <Button onClick={handleClick} icon={RobotSVG}  isChatBotOpen={isChatBotOpen}/>
           )
 }
     </div>
