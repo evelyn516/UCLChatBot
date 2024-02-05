@@ -12,8 +12,9 @@ const SearchAll = () => {
       try {
         setLoading(true);
         // Replace 'your-api-endpoint' with the actual API endpoint you want to query
-        // const response = await fetch(`https://v2.jokeapi.dev/joke/Any?type=single&amount=10`);
-        // const data = await response.json();
+        const response = await fetch(`https://student.mesh-dev.ucl.ac.uk/hackathon-chatbot/v0.1/faq`);
+        const data = await response.json();
+        console.log(data)
         if (searchTerm.length > 3){
         let data = refineResults(searchTerm)
         setSearchResults(data)};
