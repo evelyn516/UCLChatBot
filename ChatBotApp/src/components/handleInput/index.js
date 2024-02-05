@@ -46,10 +46,10 @@ const SearchAll = () => {
         </ul>
       )}
       {searchResults.length === 0 && !loading && searchTerm !== "" && (
-        <p className='no_results'>No results found. Try reducing to a few key words.</p>
+        <p className='no_results results_text'>No results found. Try reducing to a few key words.</p>
       )}
       {searchResults.length === 0 && !loading && searchTerm === "" && (
-        <p className='no_results'>Start looking for your frequently asked Question</p>
+        <p className='start_results results_text'>Start looking for your frequently asked Question</p>
       )}
       <input
         className='search_input'
