@@ -39,11 +39,14 @@ const SearchAll = () => {
   return (
     <div className='search_container'>
       {searchResults.length > 0 && (
-        <ul className='search_results'>
+        <div className='search_results'>
           {searchResults.map((result) => (
-            <><li key={result.title}>{result.content}</li><br></br></>
+            <><div className="result_container"key={result.id}>
+              <h6><a href="">{result.title}</a></h6>
+              <p>{result.content}</p>
+              </div><br></br></>
           ))}
-        </ul>
+        </div>
       )}
       {searchResults.length === 0 && !loading && searchTerm !== "" && (
         <p className='no_results results_text'>No results found. Try reducing to a few key words.</p>

@@ -21,7 +21,29 @@
   .search_results {
     list-style-type: none;
     padding: 0;
+    overflow-y: auto; 
+    max-height: 500px;
+    padding-top: 20px;
+    border-top:solid 1px #777 ;
+    margin-bottom: 25px;
   }
+
+  /* Styles for the scrollbar */
+.search_results::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.search_results::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+}
+
+.search_results::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the thumb */
+}
+
+.search_results::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the thumb on hover */
+}
   
   .search_result {
     padding: 5px 10px;
@@ -37,3 +59,16 @@
     color: #777;
   }
 
+.result_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.result_container h6 {
+    margin: 5px 0;
+}
+.result_container p {
+    font-size: 14px;
+}   
