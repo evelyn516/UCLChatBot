@@ -1,5 +1,4 @@
-import jsonData from '../../../API.json'
-
+import jsonData from '../../API.json'
 
 
 function searchByTitle(keyword) {
@@ -12,10 +11,16 @@ function searchContent(keyword) {
     return results;
 }
 
-let input = 'gatsby'
-// Example: Search for titles containing the keyword "gatsby"
-let searchResults = searchByTitle(input);
-if (searchResults == null) {
-    searchResults = searchContent(input)
-}
-console.log(searchResults);
+
+
+function refineResults(input) {
+    let searchResults = searchByTitle(input);
+    if (searchResults == null) {
+        searchResults = searchContent(input)
+    };
+    console.log(searchResults);
+    return searchResults;
+};
+ 
+
+export default refineResults;
