@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import topResults from './keywords';
 
+import "./index.css"
 const SearchAll = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -11,11 +12,14 @@ const SearchAll = () => {
       try {
         setLoading(true);
         // Replace 'your-api-endpoint' with the actual API endpoint you want to query
-        // const response = await fetch(`https://v2.jokeapi.dev/joke/Any?type=single&amount=10`);
-        // const data = await response.json();
-       
-        let data = topResults(searchTerm);
-        setSearchResults(data);
+
+        const response = await fetch(`https://student.mesh-dev.ucl.ac.uk/hackathon-chatbot/v0.1/faq`);
+        const data = await response.json();
+        console.log(data)
+        if (searchTerm.length > 3){
+        let data = topResults(searchTerm)
+        setSearchResults(data)};
+
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -36,28 +40,36 @@ const SearchAll = () => {
   };
 
   return (
-    <div>
+    <div className='search_container'>
+      {searchResults.length > 0 && (
+        <div className='search_results'>
+          {searchResults.map((result) => (
+            <><div className="result_container"key={result.id}>
+              <h6><a href="">{result.title}</a></h6>
+              <p>{result.content}</p>
+              </div><br></br></>
+          ))}
+        </div>
+      )}
+      {searchResults.length === 0 && !loading && searchTerm !== "" && (
+        <p className='no_results results_text'>No results found. Try reducing to a few key words.</p>
+      )}
+      {searchResults.length === 0 && !loading && searchTerm === "" && (
+        <p className='start_results results_text'>Start looking for your frequently asked Question</p>
+      )}
       <input
+        className='search_input'
         type="text"
-        placeholder="SEARCH ME"
+        placeholder="Search me"
         value={searchTerm}
         onChange={handleInputChange}
       />
-
+    
       {loading && <p>Loading...</p>}
+    
 
-      {searchResults.length > 0 && (
-        <ul>
-          {searchResults.map((result) => (
-            <><li key={result.title}>{result.content}</li><br></br></>
-            // Adjust 'id' and 'name' based on your API response structure
-          ))}
-        </ul>
-      )}
+    
 
-      {searchResults.length === 0 && !loading && (
-        <p>No results found. Try a reducing to a few key words.</p>
-      )}
     </div>
   );
 };
