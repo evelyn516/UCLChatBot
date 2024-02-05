@@ -23,8 +23,8 @@ function App() {
           ) : (
             <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
           )
+}
     </div>
   );
 }
-
 export default App;
