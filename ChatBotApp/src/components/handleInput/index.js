@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import refineResults from './function';
+import topResults from './keywords';
 
 const SearchAll = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,9 +13,9 @@ const SearchAll = () => {
         // Replace 'your-api-endpoint' with the actual API endpoint you want to query
         // const response = await fetch(`https://v2.jokeapi.dev/joke/Any?type=single&amount=10`);
         // const data = await response.json();
-        if (searchTerm.length > 3){
-        let data = refineResults(searchTerm)
-        setSearchResults(data)};
+       
+        let data = topResults(searchTerm);
+        setSearchResults(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {

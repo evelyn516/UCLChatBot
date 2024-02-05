@@ -17,9 +17,7 @@ function refineResults(input) {
     let searchResults = searchByTitle(input);
     if (searchResults.length == 0) {
         searchResults = searchContent(input)
-        console.log(searchResults)
     };
-    console.log(searchResults);
     return searchResults;
 };
  
