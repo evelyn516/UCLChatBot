@@ -38,16 +38,6 @@ const SearchAll = () => {
 
   return (
     <div className='search_container'>
-      <input
-        className='search_input'
-        type="text"
-        placeholder="SEARCH ME"
-        value={searchTerm}
-        onChange={handleInputChange}
-      />
-    
-      {loading && <p>Loading...</p>}
-    
       {searchResults.length > 0 && (
         <ul className='search_results'>
           {searchResults.map((result) => (
@@ -55,10 +45,25 @@ const SearchAll = () => {
           ))}
         </ul>
       )}
-    
-      {searchResults.length === 0 && !loading && (
+      {searchResults.length === 0 && !loading && searchTerm !== "" && (
         <p className='no_results'>No results found. Try reducing to a few key words.</p>
       )}
+      {searchResults.length === 0 && !loading && searchTerm === "" && (
+        <p className='no_results'>Start looking for your frequently asked Question</p>
+      )}
+      <input
+        className='search_input'
+        type="text"
+        placeholder="Search me"
+        value={searchTerm}
+        onChange={handleInputChange}
+      />
+    
+      {loading && <p>Loading...</p>}
+    
+
+    
+
     </div>
   );
 };
