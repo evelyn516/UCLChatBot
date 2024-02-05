@@ -8,6 +8,7 @@ const SearchBar = () => {
   };
 
   const handleSearch = () => {
+    let keyWords = searchTerm.splice()
     // You can perform a search or any other action with the search term here
     console.log('Search term:', searchTerm);
   };
@@ -19,6 +20,7 @@ const SearchBar = () => {
         placeholder="Enter your search term"
         value={searchTerm}
         onChange={handleInputChange}
+        id='searchBar'
       />
       <button onClick={handleSearch}>Search</button>
     </div>

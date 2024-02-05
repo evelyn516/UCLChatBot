@@ -1,5 +1,5 @@
 import './App.css';
-import SearchBar from './components/searchbar';
+import SearchAll from './components/handleInput';
 import Button from "./components/SvgButton" ;
 import { ReactComponent as RobotSVG } from './geekbot-svgrepo-com.svg';
 import { useState } from 'react';
@@ -16,15 +16,13 @@ function App() {
           isChatBotOpen ? (
             <>
             
-            <SearchBar />
-            <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
+              <SearchAll />
+              <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
             </>
 
           ) : (
             <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
           )
-
-        }
     </div>
   );
 }
