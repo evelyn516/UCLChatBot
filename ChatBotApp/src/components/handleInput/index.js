@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import refineResults from './function';
+
 import "./index.css"
 const SearchAll = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,9 +12,11 @@ const SearchAll = () => {
       try {
         setLoading(true);
         // Replace 'your-api-endpoint' with the actual API endpoint you want to query
-        const response = await fetch(`https://v2.jokeapi.dev/joke/Any?type=single&amount=10?query=${searchTerm}`);
-        const data = await response.json();
-        setSearchResults(data);
+        // const response = await fetch(`https://v2.jokeapi.dev/joke/Any?type=single&amount=10`);
+        // const data = await response.json();
+        if (searchTerm.length > 3){
+        let data = refineResults(searchTerm)
+        setSearchResults(data)};
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -47,6 +51,8 @@ const SearchAll = () => {
       {searchResults.length > 0 && (
         <ul className='search_results'>
           {searchResults.map((result) => (
+            <><li key={result.title}>{result.content}</li><br></br></>
+            // Adjust 'id' and 'name' based on your API response structure
             <li className='search_result' key={result.id}>{result.name}</li>
           ))}
         </ul>
