@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import SearchBar from './components/searchbar';
+import SearchAll from './components/handleInput';
 import Button from "./components/SvgButton" ;
 import { ReactComponent as RobotSVG } from './geekbot-svgrepo-com.svg';
+
 
 function App() {
 
@@ -14,8 +15,9 @@ function App() {
 
   return (
     <div className="App">
-        
-      <SearchBar />
+
+      <SearchAll />
+
       <Button onClick={handleClick} icon={RobotSVG} label="Click me" />
     </div>
   );
