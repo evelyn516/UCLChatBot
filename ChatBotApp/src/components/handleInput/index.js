@@ -52,8 +52,6 @@ const SearchAll = () => {
         <ul className='search_results'>
           {searchResults.map((result) => (
             <><li key={result.title}>{result.content}</li><br></br></>
-            // Adjust 'id' and 'name' based on your API response structure
-            <li className='search_result' key={result.id}>{result.name}</li>
           ))}
         </ul>
       )}
