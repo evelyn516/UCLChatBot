@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import refineResults from './function';
+import topResults from './keywords';
 
 import "./index.css"
 const SearchAll = () => {
@@ -12,12 +12,14 @@ const SearchAll = () => {
       try {
         setLoading(true);
         // Replace 'your-api-endpoint' with the actual API endpoint you want to query
+
         const response = await fetch(`https://student.mesh-dev.ucl.ac.uk/hackathon-chatbot/v0.1/faq`);
         const data = await response.json();
         console.log(data)
         if (searchTerm.length > 3){
-        let data = refineResults(searchTerm)
+        let data = topResults(searchTerm)
         setSearchResults(data)};
+
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
