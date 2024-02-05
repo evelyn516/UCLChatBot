@@ -3,20 +3,24 @@ import './App.css';
 import SearchBar from './components/searchbar';
 import Button from "./components/SvgButton" ;
 import { ReactComponent as RobotSVG } from './geekbot-svgrepo-com.svg';
-
+import { useState } from 'react';
 function App() {
-
-
+  const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   const handleClick = () => {
-    console.log('Button clicked!');
+    setIsChatBotOpen(true)
   };
 
 
   return (
     <div className="App">
-        
-      <SearchBar />
-      <Button onClick={handleClick} icon={RobotSVG} label="Click me" />
+        {
+          isChatBotOpen ? (
+            <SearchBar />
+          ) : (
+            <Button onClick={handleClick} icon={RobotSVG} label="Click me" isChatBotOpen={isChatBotOpen}/>
+          )
+
+        }
     </div>
   );
 }
