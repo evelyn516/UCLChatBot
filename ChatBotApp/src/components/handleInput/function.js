@@ -11,8 +11,6 @@ function searchContent(keyword) {
     return results;
 };
 
-
-
 function refineResults(input) {
     let searchResults = searchByTitle(input);
     if (searchResults.length == 0) {
@@ -20,6 +18,10 @@ function refineResults(input) {
     };
     return searchResults;
 };
- 
+
 
 export default refineResults;
+
+
+ 
+
